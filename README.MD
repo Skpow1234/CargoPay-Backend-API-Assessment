@@ -40,7 +40,7 @@ CargoPay-Backend-API-Assessment is a **RESTful API** built with **ASP.NET Core 8
 ### **1️⃣ Clone the Repository**
 
 ```sh
-git clone https://github.com/YOUR_USERNAME/CargoPay-Backend-API-Assessment.git
+git clone https://github.com/Skpow1234/CargoPay-Backend-API-Assessment.git
 cd CargoPay-Backend-API-Assessment
 ```
 
@@ -103,11 +103,14 @@ dotnet run --project CargoPay.Presentation
   "cardNumber": "123456789012345",
   "balance": 100.00
 }
+```
 
 ```json
-📌 **Creates a new card.**
+📌 Creates a new card.
 
-#### 🔹 `POST /api/cards/pay`
+ 🔹 `POST /api/cards/pay`
+
+```
 
 ```json
 {
