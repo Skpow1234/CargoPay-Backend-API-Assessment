@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  cargo-pay-api:
+    container_name: cargo-pay-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Server=CargoPayServer,1433;Database=CargoPayDatabase;User Id=sa;Password=YourStrong!Passw0rd;
+    depends_on:
+      - sql-server
+
+  sql-server:
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    container_name: sql-server
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "YourStrong!Passw0rd"
+      ACCEPT_EULA: "Y"
